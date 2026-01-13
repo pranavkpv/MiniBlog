@@ -24,7 +24,7 @@ class Post {
   }
 
   belongsTo(userId) {
-    return this.author.toString() === userId.toString();
+    return this.author._id.toString() === userId.toString();
   }
 
   toJSON() {

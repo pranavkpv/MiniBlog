@@ -4,10 +4,11 @@
   "description": "Frontend for mini blogging platform",
   "private": true,
   "dependencies": {
+    "axios": "^1.6.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hot-toast": "^2.6.0",
     "react-router-dom": "^6.20.1",
-    "axios": "^1.6.2",
     "react-scripts": "5.0.1"
   },
   "scripts": {
@@ -34,9 +35,8 @@
     ]
   },
   "devDependencies": {
-    "tailwindcss": "^3.3.6",
     "autoprefixer": "^10.4.16",
-    "postcss": "^8.4.32"
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.3.6"
   }
 }
-

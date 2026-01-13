@@ -29,9 +29,7 @@ const postSchema = new mongoose.Schema({
   }
 });
 
-// Indexes for better query performance
-postSchema.index({ author: 1, isDeleted: 1 });
-postSchema.index({ createdAt: -1 });
+
 
 // Update updatedAt before saving
 postSchema.pre('save', function(next) {

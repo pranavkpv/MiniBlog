@@ -1,5 +1,4 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import api from '../services/api';
 
 const AuthContext = createContext();
@@ -52,6 +51,7 @@ export const AuthProvider = ({ children }) => {
 
   const register = async (email, password) => {
     try {
+      console.log(email)
       const response = await api.post('/auth/register', { email, password });
       const { user, token } = response.data.data;
       
@@ -59,8 +59,7 @@ export const AuthProvider = ({ children }) => {
       localStorage.setItem('user', JSON.stringify(user));
       setToken(token);
       setUser(user);
-      api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-      
+      api.defaults.headers.common['Authorization'] = `Bearer ${token}`;  
       return { success: true };
     } catch (error) {
       return {
